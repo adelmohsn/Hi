@@ -20,4 +20,8 @@ $result = Longman\TelegramBot\Request::sendMessage([
     'chat_id' => '603508984',
     'text'    => 'Your utf8 text 😜 ...',
 ]);
+$result = Longman\TelegramBot\Request::sendMessage([
+    'chat_id' => '5324659957',
+    'text'    => 'Your utf8 text 😜 ...',
+]);
 ?>
