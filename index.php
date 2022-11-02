@@ -8,7 +8,7 @@ try {
    
     $telegram = new Longman\TelegramBot\Telegram($bot_api_key);
 
-    $telegram.handle();
+    $telegram->handle();
 
 } 
 catch (Longman\TelegramBot\Exception\TelegramException $e) {
