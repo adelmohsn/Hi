@@ -15,9 +15,9 @@ catch (Longman\TelegramBot\Exception\TelegramException $e) {
    
   echo $e.getMessage();
 }
-$chat_id=$telegram->getLastUpdateId();
+
 $result = Longman\TelegramBot\Request::sendMessage([
-    'chat_id' => $chat_id,
+    'chat_id' => '603508984',
     'text'    => 'Your utf8 text 😜 ...',
 ]);
 ?>
