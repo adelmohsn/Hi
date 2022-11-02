@@ -21,7 +21,7 @@ $result = Longman\TelegramBot\Request::sendMessage([
     'text'    => 'Your utf8 text 😜 ...',
 ]);
 $result = Longman\TelegramBot\Request::sendMessage([
-    'chat_id' => '5324659957',
+    'chat_id' => $this->getMessage()->getChat()->getId(),
     'text'    => 'Your utf8 text 😜 ...',
 ]);
 ?>
