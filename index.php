@@ -6,7 +6,7 @@ $bot_username = 'ADELBOOOOT_bot';
 
 try {
    
-    $telegram = new Longman\TelegramBot\Telegram($bot_api_key);
+    $telegram = new Longman\TelegramBot\Telegram($bot_api_key,$bot_username);
 
     $telegram->handle();
 
