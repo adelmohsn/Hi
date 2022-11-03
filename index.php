@@ -22,7 +22,7 @@ $text=$message->text;
 
 
 connect($API_KEY,'sendmessage',['chat_id'=>$chat_id,'text'=>'hello world'.$text]);
-
+connect($API_KEY,'sendmessage',['chat_id'=>$chat_id,'text'=>'id : '.$chat_id.'\nname : .$message->chat->first_name .'\nhello world'.$text]);
 ?>
 
 
