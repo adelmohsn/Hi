@@ -1,6 +1,6 @@
 <?php
 function connect($API_KEY,$method,$data=[]){
-   $path='api.telegram.org/bot'.$API_KEY.'/'.$method;
+   $path='https://api.telegram.org/bot'.$API_KEY.'/'.$method;
     $ch=curl_init();
     curl_setopt($ch,CURLOPT_URL,$path );
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
