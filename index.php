@@ -1,28 +1,29 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
+function connect($API_KEY,$method,$data=[]){
+   $path='api.telegram.org/bot'.$API_KEY.$method;
+    $ch=curl_init();
+    curl_setopt($ch,CURLOPT_URL,$path );
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
+    $rec=curl_exec($ch);
+    if(curl_error($ch))
+    var_dump(curl_error($ch));
+    else return json_decode($rec);
 
-$bot_api_key  = '789483519:AAE8c1b3qbKnFoEGTsnDt6PskxhUbN1jHhY';
-$bot_username = 'ADELBOOOOT_bot';
-
-try {
-   
-    $telegram = new Longman\TelegramBot\Telegram($bot_api_key,$bot_username);
-
-    $telegram->handle();
-
-} 
-catch (Longman\TelegramBot\Exception\TelegramException $e) {
-   
-  echo $e.getMessage();
 }
 
 
-$result = Longman\TelegramBot\Request::sendMessage([
-    'chat_id' => '603508984',
-    'text'    => 'Your utf8 text 😜 ...',]);
+$API_KEY='789483519:AAE8c1b3qbKnFoEGTsnDt6PskxhUbN1jHhY';
 
-$result = Longman\TelegramBot\Request::sendMessage([
-    'chat_id' => '5324659957',
-    'text'    => 'Your utf8 text 😜 ...',
-]);
+$updata=json_decode(file_get_contents('php://input'),true);
+$message=$updata->message;
+$chat_id=$message->chat->id;
+$text=$message->text;
+
+
+connect($API_KEY,'sendmessage',['chat_id'=>$chat_id,'text'=>'hello world'.$text]);
+
 ?>
+
+
+
