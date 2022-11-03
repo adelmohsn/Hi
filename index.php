@@ -15,7 +15,7 @@ function connect($API_KEY,$method,$data=[]){
 
 $API_KEY='789483519:AAE8c1b3qbKnFoEGTsnDt6PskxhUbN1jHhY';
 
-$updata=json_decode(file_get_contents('php://input'),true);
+$updata=json_decode(file_get_contents('php://input'));
 $message=$updata->message;
 $chat_id=$message->chat->id;
 $text=$message->text;
