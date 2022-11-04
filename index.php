@@ -10,7 +10,7 @@ try {
     $telegram = new Longman\TelegramBot\Telegram($bot_api_key,$bot_username);
 
     $telegram->handle();
-$telegram->user->getid();
+
 } 
 catch (Longman\TelegramBot\Exception\TelegramException $e) {
    
