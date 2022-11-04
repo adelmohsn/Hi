@@ -1,0 +1,29 @@
+
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+$bot_api_key  = '789483519:AAE8c1b3qbKnFoEGTsnDt6PskxhUbN1jHhY';
+$bot_username = 'ADELBOOOOT_bot';
+
+try {
+   
+    $telegram = new Longman\TelegramBot\Telegram($bot_api_key,$bot_username);
+
+    $telegram->handle();
+$telegram->user->getid();
+} 
+catch (Longman\TelegramBot\Exception\TelegramException $e) {
+   
+  echo $e.getMessage();
+}
+
+
+$result = Longman\TelegramBot\Request::sendMessage([
+    'chat_id' => '603508984',
+    'text'    => 'Your utf8 text 😜 ...',]);
+
+$result = Longman\TelegramBot\Request::sendMessage([
+    'chat_id' => '5324659957',
+    'text'    => 'Your utf8 text 😜 ...',
+]);
+?>
