@@ -11,6 +11,6 @@ $chat_id=$chat->id;
 $text=$message->text;
 $msg=$A->getme(); 
  
-    $A->sendmessage(['chat_id'=>$chat_id,'text'=>$msg.'   '.$text]);
+    $A->sendmessage(['chat_id'=>$chat_id,'text'=>$msg]);
 
 ?>
