@@ -9,13 +9,8 @@ $message= $A->message();
 $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
-$msg=$A->getchat($chat_id); 
-$i=1;
- foreach ($msg->result as $key => $value) {
-    # code...
- 
-    $A->sendmessage(['chat_id'=>$chat_id,'text'=>$key.' '.$value.'  '.$i]);
- $i++;}
+
+
 ?>
 
 
