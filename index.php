@@ -10,7 +10,7 @@ $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
 $msg=$A->getme(); 
- foreach ($msg=>result as $key => $value) {
+ foreach ($msg->result as $key => $value) {
     # code...
  
     $A->sendmessage(['chat_id'=>$chat_id,'text'=>$key.' '.$value]);
