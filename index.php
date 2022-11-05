@@ -8,9 +8,11 @@ $A=new Telegram($API_KEY);
 $message= $A->message(); 
 $chat=$message->chat;
 $chat_id=$chat->id;
-$text=$message->text;
+$text="";
 $msg=$A->getme(); 
- 
-    $A->sendmessage(['chat_id'=>$chat_id,'text'=>$msg]);
+  foreach ($msg as $key => $value) {
+    $text .=$key ." : ".$value." "; 
+ }
+    $A->sendmessage(['chat_id'=>$chat_id,'text'=>$text]);
 
 ?>
