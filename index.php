@@ -9,7 +9,7 @@ $message= $A->message();
 $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
-$msg=$A->getme(); 
+$msg=$A->getchat($chat_id); 
  foreach ($msg->result as $key => $value) {
     # code...
  
