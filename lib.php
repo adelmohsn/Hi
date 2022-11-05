@@ -56,6 +56,17 @@ $this->update=json_decode(file_get_contents('php://Input'));
 $this->Message=$this->update->message;
 
 }
+public function getme(){
+$path=$this->url."/"."getme";
+    $ch=curl_init();
+    curl_setopt($ch,CURLOPT_URL,$path );
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
+  
+    $rec=curl_exec($ch);
+    if(curl_error($ch))
+    var_dump(curl_error($ch));
+    else return json_decode($rec);}
 
 public function message(){
 return $this->Message;
