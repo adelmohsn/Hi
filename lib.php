@@ -61,7 +61,7 @@ $path=$this->url."/"."getme";
     $ch=curl_init();
     curl_setopt($ch,CURLOPT_URL,$path );
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
+   
   
     $rec=curl_exec($ch);
     if(curl_error($ch))
@@ -72,7 +72,7 @@ $path=$this->url."/"."getchat?chat_id={$chat_id}";
     $ch=curl_init();
     curl_setopt($ch,CURLOPT_URL,$path );
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
+    
   
     $rec=curl_exec($ch);
     if(curl_error($ch))
