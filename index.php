@@ -1,29 +1,16 @@
 
-<?php
-require __DIR__ . '/vendor/autoload.php';
+ <?php
+ require "lib.php";
+use Telegram_bot\Telegram;
+$API_KEY="789483519:AAE8c1b3qbKnFoEGTsnDt6PskxhUbN1jHhY";
+$A=new Telegram($API_KEY);
 
-$bot_api_key  = '789483519:AAE8c1b3qbKnFoEGTsnDt6PskxhUbN1jHhY';
-$bot_username = 'ADELBOOOOT_bot';
+$message= $A->message(); 
+$chat=$message->chat;
+$chat_id=$chat->id;
+$text=$message->text;
+$msg=$A->getme(); 
+ 
+    $A->sendmessage(['chat_id'=>$chat_id,'text'=>$msg.'   '.$text]);
 
-try {
-   
-    $telegram = new Longman\TelegramBot\Telegram($bot_api_key,$bot_username);
-
-    $telegram->handle();
-
-} 
-catch (Longman\TelegramBot\Exception\TelegramException $e) {
-   
-  echo $e.getMessage();
-}
-
-
-$result = Longman\TelegramBot\Request::sendMessage([
-    'chat_id' => '603508984',
-    'text'    => 'Your utf8 text 😜 ...',]);
-
-$result = Longman\TelegramBot\Request::sendMessage([
-    'chat_id' => '5324659957',
-    'text'    => 'Your utf8 text 😜 ...',
-]);
 ?>
