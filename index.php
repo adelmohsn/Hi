@@ -17,9 +17,9 @@ function getstring($data){
     $text="";
         foreach ($data as $key => $value) {
     if(is_object($value))
-    getstring($value);
+    $text.=getstring($value);
     else
-         echo $key.'  '.$value. '  '. '<p><\br><\p>';
+         $text.=$key.' : '.$value.'<p></br></p>';
       }   }
 
 
