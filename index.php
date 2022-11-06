@@ -20,7 +20,9 @@ function getstring($data){
     $text.=getstring($value);
     else
          $text.=$key.' : '.$value.'<p></br></p>';
-      }   }
+      } 
+return $text;
+}
 
 
 
