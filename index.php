@@ -9,8 +9,20 @@ $message= $A->message();
 $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
+if($text=='getme'){
+ $A->method->sendmessage(getstring($A->mothed->getme));
+}
+function getstring($data){
+    
+    $text="";
+        foreach ($data as $key => $value) {
+    if(is_object($value))
+    getstring($value);
+    else
+         echo $key.'  '.$value. '  '. '<p><\br><\p>';
+      }   }
+
+
 
 
 ?>
-
-
