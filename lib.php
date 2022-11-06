@@ -52,6 +52,7 @@ $this->Message=$this->update->message;
 $this->method=new method($API_KEY);
 
 }
+  public function method():method{return this->method;}
 public function message(){
 return $this->Message;
 }
