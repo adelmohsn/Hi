@@ -10,7 +10,7 @@ $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
 if($text=='getme'){
- $A->method->sendmessage(getstring($A->mothed->getme));
+ $A->method->sendmessage(getstring($A->methed->getme));
 }
 function getstring($data){
     
