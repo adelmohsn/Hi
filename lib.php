@@ -52,7 +52,9 @@ $this->Message=$this->update->message;
 $this->method=new method($API_KEY);
 
 }
-
+public function message(){
+return $this->Message;
+}
 /*public function getme(){
 $path=$this->url."/"."getme";
     $ch=curl_init();
@@ -65,9 +67,7 @@ $path=$this->url."/"."getme";
     var_dump(curl_error($ch));
     else return json_decode($rec);}
 
-public function message(){
-return $this->Message;
-}
+
 
 public function sendmessage(array $data){
    $path=$this->url."/"."sendmessage";
