@@ -18,7 +18,7 @@ else if (strtolower($text)=='\getchat'){
     $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getchat($chat_id))]);
 }
 
-else $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,"sorry not found {$chat->type}"]);
+else $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>"sorry not found {$chat->type}"]);
 if($text=='hello' and ($chat->type=='group')){
 $A->method->sendmessage(['chat_id'=>$chat_id,'text'=>"welecome in this group:\n name: {$message->from->first_name}\n user_name: @{$message->from->username}\n id: {$message->from->id}",'reply_to_message_id'=>$message->message_id]);}
 else if($text=='hello' and $chat->type=='channel' )
