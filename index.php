@@ -24,8 +24,9 @@ function getstring($data){
     if(is_object($value))
     getstring($value);
     else
-         echo nl2br( $key.'  '.$value. nl2br('\n'));
-      }   }
+         $text.=nl2br($key.'  '.$value.'\n');
+      }return $text;
+}
 
 
 
