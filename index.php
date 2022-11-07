@@ -25,10 +25,10 @@ function getstring($data){
      if(is_object($value))
     $text.= getstring($value);
      else
-          $text.=$key.' : '.$value.' ';
+          $text.=$key.' : '.$value."\n";
        }
       
-       return $text;
+        return nl2br($text);
  }
 
 
