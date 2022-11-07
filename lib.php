@@ -5,7 +5,7 @@ namespace Telegram_bot {
   require "message.php";
 
 class Telegram{
-    protected $Message;
+   public $Message;
 
 protected $API_KEY;
 protected $update;
