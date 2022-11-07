@@ -9,27 +9,37 @@ $message= $A->Message;
 $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
-if(strtolower($text)=='/getme'){
- $A->method->sendmessage(['chat_id'=>$chat_id ,'text'=>getstring($A->method->getme())]);
-}
-else if (strtolower($text)=='/getchat'){
 
-    $A->method->sendmessage(['chat_id'=>$chat_id ,'text'=>getstring($A->method->getchat($chat_id))]);
+if(strtolower($text)=='\getme'){
+ $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getme())]);
 }
-else $A->method->sendmessage(['chat_id'=>$chat_id ,'text'=>'sorry not found']);
+else if (strtolower($text)=='\getchat'){
+
+    $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getchat($chat_id))]);
+}
+
+else $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>'sorry not found']);
+if($text=='hello' and ($chat->type=='group')){
+$A->method->sendmessage(['chat_id'=>$chat_id,'text'=>"welecome in this group:\n name: {$message->from->first_name}\n user_name: @{$message->from->username}\n id: {$message->from->id}",'reply_to_message_id'=>$message->message_id]);}
+else if($text=='hello' and $chat->type=='channel' )
+$A->method->sendmessage(['chat_id'=>$chat_id,"text'=>'welecome in this channel \n name: {$chat->first_name}\n link: {$chat->invite_link}",'reply_to_message_id'=>$message->message_id]);
+
+
+
+
+
 function getstring($data){
     
-     $text="";
-         foreach ($data as $key => $value) {
-          
-     if(is_object($value))
-    $text.= getstring($value);
-     else
-          $text.=$key.' : '.$value."\n";
-       }
-      
-        return $text;
- }
-
+    $text="";
+        foreach ($data as $key => $value) {
+         
+    if(is_object($value))
+   $text.= getstring($value);
+    else
+         $text.=$key.' : '.$value.'\n';
+      }
+     
+      return  nl2br($text);
+}
 
 ?>
