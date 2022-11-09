@@ -41,7 +41,7 @@ function getstring($data){
          $text.=$key." : ".$value."\n";
       }
      
-      return  nl2br($text);
+      return  $text;
 }
 
 ?>
