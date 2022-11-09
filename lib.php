@@ -8,7 +8,7 @@ class Telegram{
    public $Message;
 
 protected $API_KEY;
-protected $update;
+public $update;
 protected $url="https://api.telegram.org/bot";
 public   $method ;
 public function __construct($API_KEY){
