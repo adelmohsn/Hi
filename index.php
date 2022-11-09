@@ -37,6 +37,8 @@ function getstring($data){
          
     if(is_object($value))
    $text.= getstring($value);
+           else if(is_array($value))
+    $text.= implode($value);
     else
          $text.=$key." : ".$value."\n";
       }
