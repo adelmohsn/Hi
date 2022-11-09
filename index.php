@@ -4,7 +4,9 @@
 use Telegram_bot\Telegram;
 $API_KEY="789483519:AAE8c1b3qbKnFoEGTsnDt6PskxhUbN1jHhY";
 $A=new Telegram($API_KEY);
-
+if(!is_null($A->update->channel_post))
+$message=$A->update->channel_post;
+else
 $message= $A->Message; 
 $chat=$message->chat;
 $chat_id=$chat->id;
