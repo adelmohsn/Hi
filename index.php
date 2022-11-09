@@ -38,7 +38,7 @@ function getstring($data){
     if(is_object($value))
    $text.= getstring($value);
     else
-         $text.=$key.' : '.$value.'\n';
+         $text.=$key." : ".$value."\n";
       }
      
       return  nl2br($text);
