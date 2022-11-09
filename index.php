@@ -12,10 +12,10 @@ $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
 
-if(strtolower($text)=='\getme'){
+if(strtolower($text)=='/getme'){
  $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getme())]);
 }
-else if (strtolower($text)=='\getchat'){
+else if (strtolower($text)=='/getchat'){
 
     $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getchat($chat_id))]);
 }
