@@ -22,7 +22,7 @@ $A->method->sendmessage(['chat_id'=>$chat_id,'text'=>"welecome in this group:\n 
 else if (strtolower( $text)=='hello'  )
 $A->method->sendmessage(['chat_id'=>$chat_id,"text'=>'welecome in this channel \n name: {$chat->first_name}\n link: {$chat->invite_link}",'reply_to_message_id'=>$message->message_id]);
 
-else if(strtolower($text)=='delete')$A->method->deletemessage(['chat_id'=>$chat_id,'message_id'=>$message->message_id]);
+else if(strtolower($text)=='delete')$A->method->deletemessage(['chat_id'=>$chat_id,'message_id'=>$message->forward_from_message_id]);
 else   $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>"sorry not found "]);
 
 
