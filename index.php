@@ -31,7 +31,7 @@ else if(strtolower($text)=='delete all'){
     for($i=0;$i<=$message->message_id;$i++)$A->method->deletemessage(['chat_id'=>$chat_id,'message_id'=>$i]);
 }
 else   $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>"sorry not found "]);
-
+ 
 
 
 
