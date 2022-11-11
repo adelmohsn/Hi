@@ -24,7 +24,7 @@ else if(strtolower($text)=='/user')$A->method->sendmessage(
     ['inline_keyboard'=>
     [
 ['text'=>'click here'
-    ,'callback_data'=>'hello'
+    ,'url'=>"https://t.me/user?id={$message->from->id}"
 ]
 ]
 ])
