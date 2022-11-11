@@ -21,7 +21,7 @@ else if (strtolower($text)=='/getchat'){
 else if(strtolower($text)=='user')$A->method->sendmessage(['chat_id'=>$chat_id,'reply_markup'=>json_encode(
     ['inline_keyboard'=>
     ['text'=>'clic here'
-    ,'url'=>"te.me/user?id={$chat->user->id}"
+    ,'url'=>"te.me/user?id={$message->from->id}"
 ]
 ])
 ]);
