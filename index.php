@@ -22,7 +22,7 @@ else if(strtolower($text)=='/start')$A->method->sendmessage(
 [
 'chat_id'=>$chat_id,'text'=>'hi','reply_markup'=>json_encode(  [  'inline_keyboard' => [
         [
-            ['text' => 'COMMANDS', 'url' => "https://t.me/user?id={message->from-id}"]
+            ['text' => 'COMMANDS', 'url' => "https://t.me/user?id={$message->from-id}"]
         ]]
     ])
 ]);
