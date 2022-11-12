@@ -25,7 +25,8 @@ else if(strtolower($text)=='/start')$A->method->sendmessage(
         [
             ['text' => 'clic here', 'url' => "tg://user?id={$message->from->id}"]
          ,['text' => 'clic here', 'url' => "tg://user?id={$message->from->id}"]
-        ]
+        ],
+  ['text' => 'clic here', 'url' => "tg://user?id={$message->from->id}"]
  ]
     ])
 ]);
