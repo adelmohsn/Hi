@@ -33,12 +33,11 @@ $A->method->sendmessage(['chat_id'=>$chat_id,'text'=>"welecome in this bot \n na
 else if($text=='hello' and $chat->type=='channel' )
 $A->method->sendmessage(['chat_id'=>$chat_id,'text'=>"welecome in this channel \n name: {$chat->first_name}\n link: {$chat->invite_link}",'reply_to_message_id'=>$message->message_id]);
 
-else if(strtolower($text)=='delete'){$A->method->deletemessage(['chat_id'=>$chat_id,'message_id'=>$message->reply_to_message->message_id]);
+else if(strtolower($text)=='delete')
+                                   {$A->method->deletemessage(['chat_id'=>$chat_id,'message_id'=>$message->reply_to_message->message_id]);
                                     $A->method->deletemessage(['chat_id'=>$chat_id,'message_id'=>$message->message_id]);
                                     }
-else if(strtolower($text)=='delete all'){
-    for($i=0;$i<=$message->message_id;$i++)$A->method->deletemessage(['chat_id'=>$chat_id,'message_id'=>$i]);
-}
+
 else   $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>"sorry not found "]);
  
 
