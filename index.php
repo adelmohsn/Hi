@@ -20,13 +20,10 @@ else if (strtolower($text)=='/getchat'){
 
 else if(strtolower($text)=='/start')$A->method->sendmessage(
 [
-'chat_id'=>$chat_id,'text'=>'hi','reply_markup'=>json_encode( 
- [  'inline_keyboard' => [
+'chat_id'=>$chat_id,'text'=>'hi','reply_markup'=>json_encode(  [  'inline_keyboard' => [
         [
-            ['text' => 'clic here', 'url' => "tg://user?id={$message->from->id}"]
-         ,['text' => 'clic here', 'url' => "tg://user?id={$message->from->id}"]
-        ]
- ]
+            ['text' => 'COMMANDS', 'url' => "tg://user?id={$message->from->id}"],['text' => 'COMMANDS', 'url' => "tg://user?id={$message->from->id}"]
+        ]]
     ])
 ]);
 else if(strtolower( $text)=='hello' and ($chat->type=="supergroup")){
