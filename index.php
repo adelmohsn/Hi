@@ -24,6 +24,7 @@ else if(strtolower($text)=='/start')$A->method->sendmessage(
  [  'inline_keyboard' => [
         [
             ['text' => 'clic here', 'url' => "tg://user?id={$message->from->id}"]
+         ,['text' => 'clic here', 'url' => "tg://user?id={$message->from->id}"]
         ]
  ]
     ])
