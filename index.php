@@ -9,7 +9,7 @@ $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
 
-$type=json_encode($message->entities);
+$type=getstring( json_encode($message->entities));
 
     $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>$type]);
 
