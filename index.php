@@ -20,7 +20,7 @@ else if (strtolower($text)=='/getchat'){
 
 else if(strtolower($text)=='/typemessage'){
 $type="type :";
-foreach ($message->entities->type as $key => $value) {
+foreach ($message->entities as $key => $value) {
     if($key=='type')
     $type.=$value;
 }
