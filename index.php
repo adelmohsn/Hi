@@ -9,6 +9,14 @@ $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
 
+$type="type :";
+foreach ($message->entities as $key => $value) {
+    if($key=='type')
+    $type.=$value;
+}
+    $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>$type]);
+
+
 
 if(strtolower($text)=='/getme'){
  $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getme())]);
