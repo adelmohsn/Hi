@@ -25,7 +25,7 @@ else if(strtolower($text)=='/start')$A->method->sendmessage(
             ['text' => 'COMMANDS', 'url' => "tg://user?id={$message->from->id}"]
         ],
  [
-            ['text' => 'COMMANDS', 'url' => "tg://user?id={$message->from->id}"]
+           ['text' => 'COMMANDS', 'url' => "tg://user?id={$message->from->id}"],  ['text' => 'COMMANDS', 'url' => "tg://user?id={$message->from->id}"]
         ]
 ]
     ])
