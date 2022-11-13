@@ -8,7 +8,7 @@ $message= $A->Message;
 $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
-echo var_dump($message);
+
 
 if(strtolower($text)=='/getme'){
  $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getme())]);
@@ -18,6 +18,12 @@ else if (strtolower($text)=='/getchat'){
     $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>getstring($A->method->getchat($chat_id))]);
 }
 
+else if(strtolower($text)=='/typemessage'){
+    $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>var_dump( $message)]);
+
+
+
+}
 else if(strtolower($text)=='/start')$A->method->sendmessage(
 [
 'chat_id'=>$chat_id,'text'=>'hi','reply_markup'=>json_encode(  [  'inline_keyboard' => [
