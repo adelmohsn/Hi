@@ -19,7 +19,7 @@ else if (strtolower($text)=='/getchat'){
 }
 
 else if(strtolower($text)=='/typemessage'){
-    $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>json_encode( $message->entities->type)]);
+    $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>implode( $message->entities->type)]);
 
 
 
