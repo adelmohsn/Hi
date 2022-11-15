@@ -11,7 +11,7 @@ $this->url.=$token;
 
 public function editmessage($data){
 
-return $this->editmsg("/editMessageText",$date);
+return $this->editmsg("/editMessageText",$data);
 
 
 
