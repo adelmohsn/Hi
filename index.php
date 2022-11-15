@@ -24,8 +24,10 @@ else if (strtolower($text)=='/getchat'){
 
 else if(strtolower($text)=='/getfiles'){
     for($i=$message->message_id;$i!=0;$i--){
+     
         $msg=$A->method->editmessage(['chat_id'=>$chat_id,'text'=>$text,'message_id'=>$i]);
-        if(!is_null($msg))
+     sleep(1);
+     if(!is_null($msg))
         if(!is_null($msg->document))
     
         $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>$message->document->file_name."  \n".$message->document->mime_type]);
