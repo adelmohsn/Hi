@@ -9,7 +9,7 @@ $chat=$message->chat;
 $chat_id=$chat->id;
 $text=$message->text;
 
-
+fopen("aa.txt","w+");
 
     if(!is_null($message)){
     if(!is_null($message->document))
