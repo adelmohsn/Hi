@@ -11,6 +11,12 @@ $text=$message->text;
 
 
 
+    if(!is_null($message)){
+    if(!is_null($message->document))
+
+    $A->method->sendmessage(['chat_id'=>$chat_id ,'reply_to_message_id'=>$message->message_id,'text'=>$message->document->file_name."  \n".$message->document->mime_type]);
+
+}
 
 
 if(strtolower($text)=='/getme'){
