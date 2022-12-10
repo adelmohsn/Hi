@@ -31,7 +31,7 @@ foreach ($message->entities as $key => $value) {
 
 
 }
-else if(strtolower($text)=='/start')$A->method->sendmessage(
+else if(strtolower($text)== /start')$A->method->sendmessage(
 [
 'chat_id'=>$chat_id,'text'=>'hi','reply_markup'=>json_encode(  [  'inline_keyboard' => [
         [
